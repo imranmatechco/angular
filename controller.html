@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="angular.min.js" ></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="personCrtl">
+            <p> First Name: <input ng-model="firstName"></p>
+            <p> Last Name : <input ng-model="lastName"></p>
+            <br>
+            <br>
+            
+            <p> Full Name :: {{ fullName()}}</p>
+        </div>
+        <script>
+            var app = angular.module('myApp', []);
+            app.controller('personCrtl', function($scope){
+                $scope.firstName = 'Imran';
+                $scope.lastName = 'Mustaq';
+                
+                $scope.fullName = function(){
+                    return $scope.firstName + ' ' + $scope.lastName;
+                }
+                
+            });
+        </script>
+    </body>
+</html>

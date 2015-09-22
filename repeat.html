@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<body>
+    <div ng-app="" ng-init="names=[
+                {name: 'Imran', country: 'Pakistan'}, 
+                {name: 'Azeem', country: 'India'}, 
+                {name: 'Arsalan', country: 'USA'}]">
+        <ul>
+            <li ng-repeat="x in names">
+                {{x.name + ' is from ' + x.country}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

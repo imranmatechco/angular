@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="angular.min.js"></script>
+<body>
+
+    
+    
+    <div ng-app="myApp" ng-controller="myCrt" ng-init="person={first_name1:'First name 1', last_name1:'Last name 1' };qty=5; cost=2; first_variable='First variable'; second_variable='Second variable'">
+        <p> First name 1 :: {{ person.first_name1 | lowercase }} </p>
+        
+        <p ng-bind="person.last_name1"></p>
+        
+        <p> First Name <input ng-model="first_name" > </p>
+        <p> Last Name <input ng-model="last_name"></p>
+        <br>
+        <p> Full Name {{ first_name + " " + last_name}} </p>
+        
+        
+        <p> Total in dollar {{ qty * cost | currency }} </p>
+        <p ng-bind="qty * cost" ></p>
+        
+        <p> First Second variable without binding ::  {{ first_variable + " " + second_variable }} </p>
+        <p ng-bind="first_variable + ' ' + second_variable "> </p>
+    </div>    
+    
+    <script>
+        
+        var app = angular.module('myApp', []);
+        app.controller('myCrt', function ($scope){
+            $scope.first_name = 'Imran';
+            $scope.last_name = 'Mushtaq';
+        });
+    </script>
+<!--    <div data-ng-app="" data-ng-init="firstName='Imran Mushtaq'">
+        <p> This is <span data-ng-bind="firstName"></span></p>
+        
+    </div>-->
+
+</body>
+</html>
